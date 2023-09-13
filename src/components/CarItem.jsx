@@ -28,10 +28,17 @@ const CarItem = ({cars}) => {
 								<div style={itemDescrContainerTitlePrice}>
 									<p style={itemTitle}>{item.make} {item.model}, {item.year}</p>
 									<p style={itemPrice}>{item.rentalPrice}</p>
-								</div>
-								<div style={itemDescrArray}>
-									<span style={itemDescrArrayItem}>{item.address}</span>
-								</div>
+								</div>		
+								<ul style={itemDescrArray}>
+									{/* <li>{getCity(item.address)}</li> */}
+									{/* <li>{getCountry(item.address)}</li> */}
+									<li style={itemDescrArrayItem}>{item.rentalCompany}</li>
+									<li style={itemDescrArrayItem}>Premium</li>
+									<li style={itemDescrArrayItem}>{item.type}</li>
+									<li style={itemDescrArrayItem}>{item.model}</li>
+									<li style={itemDescrArrayItem}>{item.id}</li>
+									<li style={itemDescrArrayItem}>{item.accessories[2]}</li>
+								</ul>
 							</div>
 							<button style={itemLearnMoreBtn}>Learn more</button>
 						</li>
@@ -86,8 +93,16 @@ const itemDescrArray = {
 	'width': '265px',
 	'height': '40px',
 	'marginBottom': '28px',
+	'display': 'flex',
+	'alignItems': 'center',
+	'flexWrap': 'wrap',
+	'listStyle': 'none',
+	'padding': '0px',
+	'gap': '10px',
 };
-const itemDescrArrayItem = {};
+const itemDescrArrayItem = {
+	'fontSize': '12px'
+};
 const itemLearnMoreBtn = {
 	'width': '274px',
 	'height': '44px',

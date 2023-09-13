@@ -7,35 +7,21 @@ const CarList = () => {
 	const [isLoading, setLoading] = useState(false);
 	const [cars, setCars] = useState([]);
 
+	useEffect(() => {
+		const getAllCars = async (data) => {
+			try {
+				setLoading(true);
 
+				const res = await allCars(data);
+				setCars(res);
 
-
-useEffect(() => {
-	const getAllCars = async (data) => {
-		try {
-			setLoading(true);
-
-			const res = await allCars(data);
-			setCars(res);
-
-			setLoading(false);
-		} catch (error) {
-			console.log(error)
+				setLoading(false);
+			} catch (error) {
+				console.log(error)
+			}
 		}
-	}
-	getAllCars()
-},[])
-
-// const carItem = cars.map(car => {
-// 	console.log(car)
-// 	return car;
-// });
-// console.log(carItem);
-
-
-
-
-
+		getAllCars()
+	},[])
 
 	return(
 		<div style={carListContainer}>
