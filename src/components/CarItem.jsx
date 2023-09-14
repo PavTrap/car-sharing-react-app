@@ -1,50 +1,52 @@
 const CarItem = ({cars}) => {
-// id
-// year
-// make
-// model
-// type
-// img
-// description
-// fuelConsumption
-// engineSize
-// accessories
-// functionalities
-// rentalPrice
-// rentalCompany
-// address
-// rentalConditions
-// mileage
+const {
+	id,
+	year,
+	make,
+	model,
+	type,
+	img,
+	// description,
+	// fuelConsumption,
+	// engineSize,
+	accessories,
+	// functionalities,
+	rentalPrice,
+	rentalCompany,
+	// address,
+	// rentalConditions,
+	// mileage,
+	} = cars;
 
 	return(
-		<>
-			{cars.map(item => {
-					return (
-						<li style={itemContainer} key={item.id}>
+		// <>
+			// {cars.map(item => {
+					// return (
+						<li style={itemContainer}>
 							<div style={itemIMG}>
-								<img style={{'height':'100%', 'width':'auto'}}src={item.img} alt="photo_of_the_car" />
+								<img style={{'height':'100%', 'width':'auto'}}src={img} alt="photo_of_the_car" />
 							</div>
 							<div style={itemDescrContainer}>
 								<div style={itemDescrContainerTitlePrice}>
-									<p style={itemTitle}>{item.make} {item.model}, {item.year}</p>
-									<p style={itemPrice}>{item.rentalPrice}</p>
+									<p style={itemTitle}>{make} {model}, {year}</p>
+									<p style={itemPrice}>{rentalPrice}</p>
 								</div>		
 								<ul style={itemDescrArray}>
 									{/* <li>{getCity(item.address)}</li> */}
 									{/* <li>{getCountry(item.address)}</li> */}
-									<li style={itemDescrArrayItem}>{item.rentalCompany}</li>
+									<li style={itemDescrArrayItem}>{rentalCompany}</li>
 									<li style={itemDescrArrayItem}>Premium</li>
-									<li style={itemDescrArrayItem}>{item.type}</li>
-									<li style={itemDescrArrayItem}>{item.model}</li>
-									<li style={itemDescrArrayItem}>{item.id}</li>
-									<li style={itemDescrArrayItem}>{item.accessories[2]}</li>
+									<li style={itemDescrArrayItem}>{type}</li>
+									<li style={itemDescrArrayItem}>{model}</li>
+									<li style={itemDescrArrayItem}>{id}</li>
+									<li style={itemDescrArrayItem}>{accessories[2]}</li>
 								</ul>
 							</div>
 							<button style={itemLearnMoreBtn}>Learn more</button>
 						</li>
-					);
-			})}
-		</>
+					// );
+			// })}
+		// </>
 	)
 }
 export default CarItem;

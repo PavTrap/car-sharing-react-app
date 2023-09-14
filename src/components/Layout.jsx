@@ -17,7 +17,7 @@ export const Layout = () => {
 				</Suspense>
 			</main>
 			<footer>
-				<div>footer</div>
+				{/* <button style={loadMoreBtn}>Load more</button> */}
 			</footer>
 		</div>
   );
@@ -37,3 +37,7 @@ const main = {
 	// 'height': '450px',
 	'paddingTop': '30px',
 };
+// const loadMoreBtn = {
+// 	'width': '100px',
+// 	'height': '40px',
+// }

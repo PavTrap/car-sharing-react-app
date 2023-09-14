@@ -4,12 +4,13 @@ import axios from "axios";
 // Устанавливаем базовый URL для API
 const BASEURL = 'https://650097b818c34dee0cd528db.mockapi.io/api/car_sharing';
 
+//"https://project_token.mockapi.io/users/1/tasks?completed=false&page=1&limit=10"
 
 // Функция для получения всех авто
-export const allCars = async () => {
+export const allCars = async (page = 1) => {
 
 	// Выполняем GET-запрос на URL `${BASEURL}/catalog` с помощью axios и получаем данные
-	const { data } = await axios.get(`${BASEURL}/catalog`);
+	const { data } = await axios.get(`${BASEURL}/catalog?page=${page}&limit=8`);
 	// Возвращаем полученные данные
 	return data;
 };
