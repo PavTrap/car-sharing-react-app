@@ -6,8 +6,8 @@ import { allCars } from '../api/api';
 const CarList = () => {
 	const [isLoading, setLoading] = useState(false);
 	const [cars, setCars] = useState([]);
-	const [currentPage, setCurrentPage] = useState(1);
-	console.log(currentPage)
+	const [page, setPage] = useState(1);
+	console.log(page)
 
 
 
@@ -71,11 +71,11 @@ const CarList = () => {
 			 try {
 				setLoading(true);
 
-				const res = await allCars(currentPage);
-				// setCars(prev => {
-				// 	return [...prev, ...res];
-				// });
-				setCars(res);
+				const res = await allCars(page);
+				setCars(prev => {
+					return [...prev, ...res];
+				});
+				// setCars(res);
 
 				setLoading(false);
 			 } catch (error) {
@@ -83,7 +83,7 @@ const CarList = () => {
 			 };
 		  };
 		getLoadMoreCars();
-	 }, [currentPage]);
+	 }, [page]);
 
 
 	
@@ -97,8 +97,8 @@ const CarList = () => {
 					</ul>
 					)}
 			</div>
-			<button style={loadMoreBtn} onClick={() => setCurrentPage(prev => prev - 1)}>Load less</button>
-			<button style={loadMoreBtn} onClick={() => setCurrentPage(prev => prev + 1)}>Load more</button>
+			{/* <button style={loadMoreBtn} onClick={() => setPage(prev => prev - 1)}>Load less</button> */}
+			<button style={loadMoreBtn} onClick={() => setPage(prev => prev + 1)}>Load more</button>
 			{/* {showLoadMore && cars?.length > 7 && (
         		<button onClick={() => setCurrentPage(prev => prev + 1)}>Load more</button>
       	)} */}
