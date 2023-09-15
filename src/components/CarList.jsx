@@ -4,104 +4,67 @@ import CarItem from './CarItem';
 import { allCars } from '../api/api';
 
 const CarList = () => {
-	const [isLoading, setLoading] = useState(false);
+	// const [isLoading, setIsLoading] = useState(false);
 	const [cars, setCars] = useState([]);
 	const [page, setPage] = useState(1);
-	console.log(page)
+	const [limit, setLimit] = useState(0);
 
 
-
-	//first loading page
 	useEffect(() => {
 		const getAllCars = async () => {
 			try {
-				setLoading(true);
-
-				const res = await allCars();
-				setCars(res);
-
-				setLoading(false);
+				const res = await allCars(page, limit);
+				setCars(cars=>[...cars ,...res]);
+				setLimit(8);
 			} catch (error) {
 				console.log(error)
 			}
 		}
 		getAllCars()
-	},[]);
+	},[page, limit]);
 
-
-
-	//pagination
+	// //first loading page
 	// useEffect(() => {
 	// 	const getAllCars = async () => {
-	// 		const page = currentPage;
 	// 		try {
-	// 			setLoading(true);
+	// 			setIsLoading(true);
 
-	// 			const res = await allCars(page);
+	// 			const res = await allCars(1);
 	// 			setCars(res);
 	// 			console.log(res)
 
-	// 			setLoading(false);
+	// 			setIsLoading(false);
 	// 		} catch (error) {
 	// 			console.log(error)
 	// 		}
 	// 	}
 	// 	getAllCars()
 	// },[]);
-	//
+
+
 	// useEffect(() => {
-	// 	if (currentPage !== 1 && !isLoading) {
-	// 	  (async () => {
+	// 	const getLoadMoreCars = async () => {
 	// 		 try {
-	// 			const res = await allCars(currentPage);
-	// 			res &&  setCars(prev => {
-	// 				 				return [...prev, ...res];
-	// 			  				});
+	// 			const res = await allCars(page);
+	// 			setCars(prev => [...prev, ...res]);
 	// 		 } catch (error) {
 	// 			console.log(error);
-	// 		 }
-	// 	  })();
-	// 	}
-	//  }, [isLoading, currentPage]);
-
-
-
-	useEffect(() => {
-		const getLoadMoreCars = async () => {
-			 try {
-				setLoading(true);
-
-				const res = await allCars(page);
-				setCars(prev => {
-					return [...prev, ...res];
-				});
-				// setCars(res);
-
-				setLoading(false);
-			 } catch (error) {
-				console.log(error);
-			 };
-		  };
-		getLoadMoreCars();
-	 }, [page]);
+	// 		 };
+	// 	  };
+	// 	getLoadMoreCars();
+	//  }, [page]);
 
 
 	
 	return(
 		<>
 			<div style={carListContainer}>
-				{isLoading ? (<div>Loading...</div>) : (
 					<ul style={carList}>
-						{/* <CarItem cars={cars}/> */}
+				
 						{cars && cars.map(item => <CarItem cars={item} key={item.id}/>)}
 					</ul>
-					)}
 			</div>
-			{/* <button style={loadMoreBtn} onClick={() => setPage(prev => prev - 1)}>Load less</button> */}
-			<button style={loadMoreBtn} onClick={() => setPage(prev => prev + 1)}>Load more</button>
-			{/* {showLoadMore && cars?.length > 7 && (
-        		<button onClick={() => setCurrentPage(prev => prev + 1)}>Load more</button>
-      	)} */}
+			<button style={loadMoreBtn} onClick={() => setPage(page + 1)}>Load more</button>
 		</>
 	)
 }
