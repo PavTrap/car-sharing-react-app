@@ -16,21 +16,22 @@ export const allCars = async (page, limit) => {
 };
 
 
-// Функция для добавления авто в избраное
-export const addCarsToFavorite = async (id) => {
+// Функция для добавления и удаления авто в избраное
+export const addCarsToFavorite = async (id, value) => {
 
-	// Выполняем POST-запрос на URL `${BASEURL}/catalog` с переданным авто и получаем данные
-	const { data } = await axios.post(`${BASEURL}/favorite`, id);
+	// Выполняем put-запрос на URL `${BASEURL}/catalog` с переданным авто и получаем данные
+	const { data } = await axios.put(`${BASEURL}/catalog/${id}`, {favorite: value});
 	// Возвращаем полученные данные
 	return data;
 };
 
-// Функция для удаления авто
-export const delCarsFromFavorite = async id => {
 
-	// Выполняем DELETE-запрос на URL `${BASEURL}/catalog/${id}` с указанным идентификатором авто и получаем данные
-	const { data } = await axios.delete(`${BASEURL}/favorite/${id}`);
+// Функция для получения всех авто
+export const getFavorites = async (page, limit) => {
 
+	// Выполняем GET-запрос на URL `${BASEURL}/catalog` с помощью axios и получаем данные
+	const { data } = await axios.get(`${BASEURL}/catalog?favorite=true&page=${page}&limit=${limit}`);
 	// Возвращаем полученные данные
 	return data;
-}
+};
+

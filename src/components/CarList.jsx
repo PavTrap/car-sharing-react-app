@@ -23,6 +23,11 @@ const CarList = () => {
 		getAllCars()
 	},[page, limit]);
 
+
+	
+
+
+
 	// //first loading page
 	// useEffect(() => {
 	// 	const getAllCars = async () => {
