@@ -76,8 +76,8 @@ const CarList = () => {
 export default CarList;
 
 const carListContainer = {
-	'outline': '1px solid red',
-	'width': '1184px',
+	// 'outline': '1px solid red',
+	'maxWidth': '1200px',
 	'display': 'flex',
 	'alignItems': 'center',
 	'justifyContent': 'center',
@@ -91,9 +91,14 @@ const carList = {
 	'gap': '29px',
 	'flexWrap': 'wrap',
 	'listStyle': 'none',
-	'padding': '0px'
+	'padding': '0px',
+	'marginBottom': '30px',
 }
 const loadMoreBtn = {
-	'width': '100px',
+	'width': '150px',
 	'height': '40px',
+	'border': 'none',
+	'backgroundColor': 'initial',
+	'color': 'white',
+	'fontWeight': '600',
 }

@@ -1,4 +1,6 @@
 import FavoriteBtn from '../components/FavoriteBtn';
+import {getCity} from '../utils/formatAdress';
+import {getCountry} from '../utils/formatAdress';
 
 const CarItem = ({cars, refresh}) => {
 const {
@@ -15,7 +17,7 @@ const {
 	// functionalities,
 	rentalPrice,
 	rentalCompany,
-	// address,
+	address,
 	// rentalConditions,
 	// mileage,
 	favorite,
@@ -30,18 +32,18 @@ const {
 							</div>
 							<div style={itemDescrContainer}>
 								<div style={itemDescrContainerTitlePrice}>
-									<p style={itemTitle}>{make} {model}, {year}</p>
-									<p style={itemPrice}>{rentalPrice}</p>
+									<h2 style={itemTitle}>{make} <span style={itemTitleSpan}>{model}</span>, {year}</h2>
+									<h2 style={itemPrice}>{rentalPrice}</h2>
 								</div>		
 								<ul style={itemDescrArray}>
-									{/* <li>{getCity(item.address)}</li> */}
-									{/* <li>{getCountry(item.address)}</li> */}
+									<li style={itemDescrArrayItem}>{getCity(address)}</li>
+									<li style={itemDescrArrayItem}>{getCountry(address)}</li>
 									<li style={itemDescrArrayItem}>{rentalCompany}</li>
 									<li style={itemDescrArrayItem}>Premium</li>
 									<li style={itemDescrArrayItem}>{type}</li>
 									<li style={itemDescrArrayItem}>{model}</li>
 									<li style={itemDescrArrayItem}>{id}</li>
-									<li style={itemDescrArrayItem}>{accessories[2]}</li>
+									<li style={itemDescrArrayItemLast}>{accessories[2]}</li>
 								</ul>
 							</div>
 							<button style={itemLearnMoreBtn}>Learn more</button>
@@ -51,14 +53,17 @@ const {
 export default CarItem;
 
 const itemContainer = {
-	'outline': '1px solid red',
+	// 'outline': '1px solid red',
 	'width': '274px',
-	'height': '426px',
+	'height': '446px',
 	'position': 'relative',
+	'display': 'flex',
+	'flexDirection': 'column',
+
 };
 
 const itemIMG = {
-	'outline': '1px solid green',
+	// 'outline': '1px solid green',
 	'width': '274px',
 	'height': '268px',
 	'borderRadius': '14px',
@@ -80,26 +85,44 @@ const itemDescrContainer = {
 	'alignItems': 'center',
 	'justifyContent': 'center',
 	'flexDirection': 'column',
-	'gap': '8px'
+	'gap': '8px',
+	'flexGrow': '1',
 };
 const itemDescrContainerTitlePrice = {
-	'outline': '1px solid blue',
+	// 'outline': '1px solid blue',
 	'width': '265px',
 	'height': '24px',
 	'display': 'flex',
 	'alignItems': 'center',
 	'justifyContent': 'space-between',
+	'flexGrow': '1',
+	'color': 'white',
+	'margin': '0',
+	// 'padding': '0',
 };
 const itemTitle = {
-	'outline': '1px solid orange',
+	// 'outline': '1px solid orange',
 	'minWidth': '30px',
+	'color': 'white',
+	'fontSize': '18px',
+	'fontWeight': '200',
+};
+const itemTitleSpan = {
+	// 'outline': '1px solid orange',
+	'minWidth': '30px',
+	'color': 'rgba(52, 112, 255, 1)',
+	'fontSize': '18px',
+	'fontWeight': '200',
 };
 const itemPrice = {
-	'outline': '1px solid black',
+	// 'outline': '1px solid black',
 	'minWidth': '30px',
+	'color': 'white',
+	'fontSize': '18px',
+	'fontWeight': '200',
 };
 const itemDescrArray = {
-	'outline': '1px solid pink',
+	// 'outline': '1px solid pink',
 	'width': '265px',
 	'height': '40px',
 	'marginBottom': '28px',
@@ -109,10 +132,21 @@ const itemDescrArray = {
 	'listStyle': 'none',
 	'padding': '0px',
 	'gap': '10px',
+	'color': 'white',
+	'fontSize': '12px',
 };
 const itemDescrArrayItem = {
-	'fontSize': '12px'
+	'fontSize': '12px',
+	'color': 'white',
+	'borderRight': '1px solid white',
+	'paddingRight': '10px',
 };
+const itemDescrArrayItemLast = {
+	'fontSize': '12px',
+	'color': 'white',
+	'borderRight': 'none',
+	'paddingRight': '10px',
+}
 const itemLearnMoreBtn = {
 	'width': '274px',
 	'height': '44px',

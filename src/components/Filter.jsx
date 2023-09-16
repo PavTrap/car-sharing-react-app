@@ -25,18 +25,20 @@ const Filter = () => {
 export default Filter;
 
 const filterContainer = {
-	'width': '860px',
-	'height': '74px',
-	'outline': '1px solid red',
+	'maxWidth': '860px',
+	'minHeight': '74px',
+	// 'outline': '1px solid red',
 	'display': 'flex',
 	'alignItems': 'end',
+	'flexWrap': 'wrap',
 	'justifyContent': 'center',
 	'marginBottom': '50px',
 };
 const filterForm = {
-	'width': '860px',
-	'height': '48px',
+	'maxWidth': '860px',
+	'minHeight': '48px',
 	'display': 'flex',
+	'flexWrap': 'wrap',
 	'gap': '18px',
 	'alignItems': 'end',
 	'justifyContent': 'center',
@@ -98,4 +100,5 @@ const filterSearchBtn = {
 	'borderRadius': '12px',
 	'backgroundColor': '#3470FF',
 	'color': 'white',
+	'cursor': 'pointer',
 }
