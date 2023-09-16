@@ -26,7 +26,7 @@ export const addCarsToFavorite = async (id, value) => {
 };
 
 
-// Функция для получения всех авто
+// Функция для получения всех favorite авто 
 export const getFavorites = async (page, limit) => {
 
 	// Выполняем GET-запрос на URL `${BASEURL}/catalog` с помощью axios и получаем данные

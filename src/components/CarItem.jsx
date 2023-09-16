@@ -1,4 +1,6 @@
-const CarItem = ({cars}) => {
+import FavoriteBtn from '../components/FavoriteBtn';
+
+const CarItem = ({cars, refresh}) => {
 const {
 	id,
 	year,
@@ -16,14 +18,14 @@ const {
 	// address,
 	// rentalConditions,
 	// mileage,
+	favorite,
 	} = cars;
 
+
 	return(
-		// <>
-			// {cars.map(item => {
-					// return (
 						<li style={itemContainer}>
 							<div style={itemIMG}>
+								<FavoriteBtn style={favIcon} favorite={favorite} id={id} refresh={refresh}/>
 								<img style={{'height':'100%', 'width':'auto'}}src={img} alt="photo_of_the_car" />
 							</div>
 							<div style={itemDescrContainer}>
@@ -44,9 +46,6 @@ const {
 							</div>
 							<button style={itemLearnMoreBtn}>Learn more</button>
 						</li>
-					// );
-			// })}
-		// </>
 	)
 }
 export default CarItem;
@@ -55,6 +54,7 @@ const itemContainer = {
 	'outline': '1px solid red',
 	'width': '274px',
 	'height': '426px',
+	'position': 'relative',
 };
 
 const itemIMG = {
@@ -67,6 +67,14 @@ const itemIMG = {
 	'justifyContent': 'center',
 	'marginBottom': '14px',
 };
+const favIcon = {
+	'position': 'absolute',
+	'top': '14px',
+	'right': '14px',
+	'color': 'white',
+	'cursor': 'pointer',
+	'zIndex': '20',
+}
 const itemDescrContainer = {
 	'display': 'flex',
 	'alignItems': 'center',
