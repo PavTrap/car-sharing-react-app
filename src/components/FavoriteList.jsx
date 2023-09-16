@@ -111,6 +111,3 @@ const loadMoreBtn = {
 const noCarsStyleText = {
 	'color': 'white',
 }
-const carListContainerFlex = {
-
-}
