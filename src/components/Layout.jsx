@@ -73,7 +73,7 @@ const navFavorite = {
 const main = {
 	'width': '100%',
 	// 'minHeight': '100vh',
-	'height': '100rem',
+	// 'height': '100rem',
 	'backgroundColor': 'rgba(1, 1, 1, 1)',
 	'padding': '30px 10px'
 };
