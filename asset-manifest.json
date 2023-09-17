@@ -1,23 +1,25 @@
 {
   "files": {
     "main.css": "/car-sharing-react-app/static/css/main.9536d253.css",
-    "main.js": "/car-sharing-react-app/static/js/main.25ad8ef5.js",
+    "main.js": "/car-sharing-react-app/static/js/main.6167ee0c.js",
     "static/js/415.4dac07f5.chunk.js": "/car-sharing-react-app/static/js/415.4dac07f5.chunk.js",
-    "static/js/845.8dac6a11.chunk.js": "/car-sharing-react-app/static/js/845.8dac6a11.chunk.js",
-    "static/js/601.85b173d8.chunk.js": "/car-sharing-react-app/static/js/601.85b173d8.chunk.js",
+    "static/js/845.694fd6ca.chunk.js": "/car-sharing-react-app/static/js/845.694fd6ca.chunk.js",
+    "static/js/601.179fece8.chunk.js": "/car-sharing-react-app/static/js/601.179fece8.chunk.js",
     "static/js/279.4e594ab9.chunk.js": "/car-sharing-react-app/static/js/279.4e594ab9.chunk.js",
+    "static/js/358.65a39e8a.chunk.js": "/car-sharing-react-app/static/js/358.65a39e8a.chunk.js",
     "index.html": "/car-sharing-react-app/index.html",
     "static/media/notFavorite.svg": "/car-sharing-react-app/static/media/notFavorite.ac060e771360fcc26ebb0c86173c8396.svg",
     "static/media/favorite.svg": "/car-sharing-react-app/static/media/favorite.623a3b874365d724c658e79a860ad4a4.svg",
     "main.9536d253.css.map": "/car-sharing-react-app/static/css/main.9536d253.css.map",
-    "main.25ad8ef5.js.map": "/car-sharing-react-app/static/js/main.25ad8ef5.js.map",
+    "main.6167ee0c.js.map": "/car-sharing-react-app/static/js/main.6167ee0c.js.map",
     "415.4dac07f5.chunk.js.map": "/car-sharing-react-app/static/js/415.4dac07f5.chunk.js.map",
-    "845.8dac6a11.chunk.js.map": "/car-sharing-react-app/static/js/845.8dac6a11.chunk.js.map",
-    "601.85b173d8.chunk.js.map": "/car-sharing-react-app/static/js/601.85b173d8.chunk.js.map",
-    "279.4e594ab9.chunk.js.map": "/car-sharing-react-app/static/js/279.4e594ab9.chunk.js.map"
+    "845.694fd6ca.chunk.js.map": "/car-sharing-react-app/static/js/845.694fd6ca.chunk.js.map",
+    "601.179fece8.chunk.js.map": "/car-sharing-react-app/static/js/601.179fece8.chunk.js.map",
+    "279.4e594ab9.chunk.js.map": "/car-sharing-react-app/static/js/279.4e594ab9.chunk.js.map",
+    "358.65a39e8a.chunk.js.map": "/car-sharing-react-app/static/js/358.65a39e8a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9536d253.css",
-    "static/js/main.25ad8ef5.js"
+    "static/js/main.6167ee0c.js"
   ]
 }
