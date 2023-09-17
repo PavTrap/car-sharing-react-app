@@ -1,4 +1,6 @@
 import { getCity, getCountry, arrayFromString } from '../utils/formatAdress';
+import { Link } from 'react-router-dom';
+
 const Modal = ({ car, active, setActive}) => {
 	const {
 		id,
@@ -69,7 +71,9 @@ const Modal = ({ car, active, setActive}) => {
 						<li style={rentalDescrArrayItem}>Price: <span style={rentalDescrArrayItemSpan}>{rentalPrice}</span></li>
 					</ul>
 				</div>
-				<button style={rentCarBtn}>Rental car</button>
+				<div style={rentCarBtn}>
+				<Link  style={rentCarBtnLink} data-rel="external" to="tel:+380730000000" target="blank">Rental car</Link>
+				</div>
 			</div>
 		</div>
 	)
@@ -234,6 +238,14 @@ const rentCarBtn = {
 	'color': 'white',
 	'fontSize': '14px',
 	'fontWeight': '400',
+	'display': 'flex',
+	'alignItems': 'center',
+	'justifyContent': 'center',
 };
-
+const rentCarBtnLink = {
+	'textDecoration': 'none',
+	'color': 'white',
+	'fontSize': '14px',
+	'fontWeight': '400',
+}
 
