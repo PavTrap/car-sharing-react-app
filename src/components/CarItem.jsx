@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import FavoriteBtn from '../components/FavoriteBtn';
 import {getCity} from '../utils/formatAdress';
 import {getCountry} from '../utils/formatAdress';
+import Modal from './Modal';
 
 const CarItem = ({cars, refresh}) => {
 const {
@@ -22,9 +24,10 @@ const {
 	// mileage,
 	favorite,
 	} = cars;
+	const [modalActive, setModalActive] = useState(false);
 
 
-	return(
+	return(<>
 						<li style={itemContainer}>
 							<div style={itemIMG}>
 								<FavoriteBtn style={favIcon} favorite={favorite} id={id} refresh={refresh}/>
@@ -46,9 +49,10 @@ const {
 									<li style={itemDescrArrayItemLast}>{accessories[2]}</li>
 								</ul>
 							</div>
-							<button style={itemLearnMoreBtn}>Learn more</button>
+							<button style={itemLearnMoreBtn} onClick={() => setModalActive(true)}>Learn more</button>
 						</li>
-	)
+						<Modal active={modalActive} setActive={setModalActive}  car={cars}/>
+						</>)
 }
 export default CarItem;
 
@@ -138,7 +142,7 @@ const itemDescrArray = {
 const itemDescrArrayItem = {
 	'fontSize': '12px',
 	'color': 'white',
-	'borderRight': '1px solid white',
+	'borderRight': '0.5px solid white',
 	'paddingRight': '10px',
 };
 const itemDescrArrayItemLast = {

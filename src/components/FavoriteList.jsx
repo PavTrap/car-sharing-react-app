@@ -60,7 +60,7 @@ const FavoriteList = () => {
 		<>
 		{!favorite.length >= 1 ? 
 			(<div style={carListContainer}>
-				<p style={noCarsStyleText}>No favorite cars</p>
+				<p style={noCarsStyleText}>Upppps...  No favorite cars</p>
 			</div>)
 			:
 			(<div style={carListContainer}>
